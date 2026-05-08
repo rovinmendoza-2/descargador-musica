@@ -80,6 +80,10 @@ def descargar_audio(url: str, carpeta: Path, formato: str = "m4a") -> Path | Non
         "remote_components": ["ejs:github"],
     }
 
+    ruta_cookies = Path(__file__).resolve().parent / "cookies.txt"
+    if ruta_cookies.exists():
+        opciones["cookiefile"] = str(ruta_cookies)
+
     with yt_dlp.YoutubeDL(opciones) as ydl:
         try:
             ydl.extract_info(url, download=True)
