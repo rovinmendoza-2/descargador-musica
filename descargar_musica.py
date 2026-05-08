@@ -73,7 +73,7 @@ def descargar_audio(url: str, carpeta: Path, formato: str = "m4a") -> Path | Non
         "quiet": False,
         "extractor_args": {
             "youtube": {
-                "player_client": ["tv_embedded", "web", "android"],
+                "player_client": ["android", "ios"],
             },
         },
         # Descargar scripts EJS desde GitHub si hay runtime JS (Deno/Node); ayuda a evitar 403
