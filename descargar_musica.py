@@ -85,15 +85,8 @@ def descargar_audio(url: str, carpeta: Path, formato: str = "m4a") -> Path | Non
         opciones["cookiefile"] = str(ruta_cookies)
 
     with yt_dlp.YoutubeDL(opciones) as ydl:
-        try:
-            ydl.extract_info(url, download=True)
-            return _ultimo_archivo_audio(carpeta, formato)
-        except yt_dlp.utils.DownloadError as e:
-            print(f"Error al descargar: {e}")
-            return None
-        except Exception as e:
-            print(f"Error: {e}")
-            return None
+        ydl.extract_info(url, download=True)
+        return _ultimo_archivo_audio(carpeta, formato)
 
 
 def aplicar_portada(ruta_audio: Path, ruta_imagen: Path) -> bool:
