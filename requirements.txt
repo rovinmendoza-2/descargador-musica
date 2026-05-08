@@ -1,0 +1,11 @@
+# Descarga de audio de YouTube en máxima calidad (incluye EJS para evitar 403)
+yt-dlp[default]>=2024.1.1
+
+# Metadatos y portada en archivos de audio (MP3, M4A)
+mutagen>=1.47.0
+
+# Interfaz web
+flask>=3.0.0
+
+# Servidor web para producción
+gunicorn>=21.2.0
